@@ -1,3 +1,8 @@
+<a href="./dodaj.php">Dodaj nową osobę</a>
+
+
+
+
 <?php
 
 require_once('./header.php');
@@ -57,6 +62,10 @@ $wynik = $polaczenie->query($sql);
                 <h3> <?php echo $osoba['id'] ?>. <?php echo $osoba['user'] ?></h3>
                 <p> <?php echo $osoba['title'] ?> - <?php echo $osoba['department_name'] ?> </p>
                 <h5> <?php echo $osoba['email'] ?> </h5>
+                <form action="./delete.php" method="post">
+                    <input name="id" value="<?php echo $osoba['id']?>" type="hidden">
+                    <button type="submit">Usuń</button>
+                </form>
             </div>
 
     <?php
